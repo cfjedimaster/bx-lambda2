@@ -36,10 +36,12 @@ class{
 		*/
 		local.pirateKey = server.system.environment?.PIRATE_KEY;
 
+		local.report = getWeather(pirateKey, event.latitude, event.longitude);
+
 		response.body = {
 			"error": false,
 			"messages": [],
-			"data": "pk #pirateKey# Feb13 A====> Incoming event " & event.toString()
+			"data": "pk #pirateKey# Feb13 A====> Incoming event " & event.toString() & " res #jsonSerialize(local.report)#"
 		}
 		response.statusCode = 200
 	}
