@@ -25,21 +25,12 @@ class{
 
 	function run( event, context, response ){
 
-		/*
-		local.system = createObject( "java", "java.lang.System" );
-		local.test = system.getenv('BOXLANG_LAMBDA_CLASS');
-		local.test2 = system.getenv('ray1');
-		local.pirateKey = system.getenv('PIRATE_KEY');
-		writedump(server.system.environment);
-//		local.test3 = server.system.environment.BOXLANG_LAMBDA_CLASS;
-//		local.test4 = server.system.environment.ray1;
-		*/
 		local.pirateKey = server.system.environment?.PIRATE_KEY;
 
 		if(!event.keyExists('latitude') || !event.keyExists('longitude')) {
 			response.body = {
 				"error": true, 
-				"message": [ "latitude and longitude must be passed" ]
+				"messages": [ "latitude and longitude must be passed" ]
 			}
 
 			response.statusCode = 500;
