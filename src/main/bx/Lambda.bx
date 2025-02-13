@@ -32,7 +32,7 @@ class{
 
 			response.body = {
 				"error": true, 
-				"messages": [ "latitude and longitude must be passed" ],
+				"messages": [ "latitude and longitude must be passed, you passed #event.toString()#" ],
 				"data": "Error"
 			}
 
