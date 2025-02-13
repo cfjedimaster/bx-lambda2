@@ -45,8 +45,9 @@ public class LambdaRunnerTest {
 		Context			context		= new TestContext();
 		var				event		= new HashMap<String, Object>();
 		// Add some mock data to the event
-		event.put( "name", "Ortus Solutions" );
-		event.put( "when", Instant.now().toString() );
+
+		event.put( "longitude", 30 );
+		event.put( "latitude", -92 );
 
 		// EXECUTE THE LAMBDA
 		var		results	= runner.handleRequest( event, context );
