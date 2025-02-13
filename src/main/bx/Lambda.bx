@@ -17,10 +17,14 @@
 class{
 
 	function run( event, context, response ){
+
+		local.system = createObject( "java", "java.lang.System" );
+		local.test = system.getenv('BOXLANG_LAMBDA_CLASS');
+
 		response.body = {
 			"error": false,
 			"messages": [],
-			"data": "Feb13 A====> Incoming event " & event.toString()
+			"data": "test: #test# Feb13 A====> Incoming event " & event.toString()
 		}
 		response.statusCode = 200
 	}
