@@ -28,9 +28,11 @@ class{
 		local.pirateKey = server.system.environment?.PIRATE_KEY;
 
 		if(!event.keyExists('latitude') || !event.keyExists('longitude')) {
+
 			response.body = {
 				"error": true, 
-				"messages": [ "latitude and longitude must be passed" ]
+				"messages": [ "latitude and longitude must be passed" ],
+				"data": "Error"
 			}
 
 			response.statusCode = 500;
