@@ -29,6 +29,7 @@ class{
 
 		if(!event.keyExists('latitude') || !event.keyExists('longitude')) {
 
+
 			response.body = {
 				"error": true, 
 				"messages": [ "latitude and longitude must be passed" ],
@@ -37,17 +38,17 @@ class{
 
 			response.statusCode = 500;
 
-			return response;
-		}
+		} else {
 
-		local.report = getWeather(pirateKey, event.latitude, event.longitude);
+			local.report = getWeather(pirateKey, event.latitude, event.longitude);
 
-		response.body = {
-			"error": false,
-			"messages": [],
-			"data": "pk #pirateKey# Feb13 A====> Incoming event " & event.toString() & " res #jsonSerialize(local.report)#"
+			response.body = {
+				"error": false,
+				"messages": [],
+				"data": "pk #pirateKey# Feb13 A====> Incoming event " & event.toString() & " res #jsonSerialize(local.report)#"
+			}
+			response.statusCode = 200
 		}
-		response.statusCode = 200
 	}
 
 	function anotherLambda( event, context, response ){
