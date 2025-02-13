@@ -27,7 +27,7 @@ class{
 
 		local.pirateKey = server.system.environment?.PIRATE_KEY;
 
-		if(!event.keyExists('latitude') || !event.keyExists('longitude')) {
+		if(!event.body.keyExists('latitude') || !event.body.keyExists('longitude')) {
 
 
 			response.body = {
@@ -40,7 +40,7 @@ class{
 
 		} else {
 
-			local.report = getWeather(pirateKey, event.latitude, event.longitude);
+			local.report = getWeather(pirateKey, event.body.latitude, event.body.longitude);
 
 			response.body = {
 				"error": false,
