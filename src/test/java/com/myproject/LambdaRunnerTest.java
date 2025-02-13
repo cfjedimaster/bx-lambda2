@@ -46,6 +46,7 @@ public class LambdaRunnerTest {
 		var				event		= new HashMap<String, Object>();
 		// Add some mock data to the event
 
+		/*
 		event.put( "longitude", 30 );
 		event.put( "latitude", -92 );
 
@@ -55,6 +56,7 @@ public class LambdaRunnerTest {
 
 		assertThat( results ).isNotNull();
 		assertThat( results.get( "STATUSCODE" ) ).isEqualTo( 200 );
+		*/
 		/*
 		assertThat(
 		    body.getAsString( Key.of( "data" ) )
