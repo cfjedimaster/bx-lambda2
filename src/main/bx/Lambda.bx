@@ -20,11 +20,12 @@ class{
 
 		local.system = createObject( "java", "java.lang.System" );
 		local.test = system.getenv('BOXLANG_LAMBDA_CLASS');
+		local.test2 = system.getenv('ray1');
 
 		response.body = {
 			"error": false,
 			"messages": [],
-			"data": "test: #test# Feb13 A====> Incoming event " & event.toString()
+			"data": "test: #test# test2 #test2# Feb13 A====> Incoming event " & event.toString()
 		}
 		response.statusCode = 200
 	}
