@@ -36,6 +36,17 @@ class{
 		*/
 		local.pirateKey = server.system.environment?.PIRATE_KEY;
 
+		if(!event.keyExists('latitude') || !event.keyExists('lontitude')) {
+			response.body = {
+				"error": true, 
+				"message": [ "latitude and longitude must be passed" ]
+			}
+
+			response.statusCode = 500;
+
+			return response;
+		}
+
 		local.report = getWeather(pirateKey, event.latitude, event.longitude);
 
 		response.body = {
