@@ -46,7 +46,7 @@ class{
 			response.body = {
 				"error": false,
 				"messages": [],
-				"data": "pk #pirateKey# Feb13 A====> Incoming event " & event.toString() & " res #jsonSerialize(local.report)#"
+				"data": report
 			}
 			response.statusCode = 200
 		}
