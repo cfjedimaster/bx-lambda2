@@ -25,17 +25,21 @@ class{
 
 	function run( event, context, response ){
 
+		/*
 		local.system = createObject( "java", "java.lang.System" );
 		local.test = system.getenv('BOXLANG_LAMBDA_CLASS');
 		local.test2 = system.getenv('ray1');
 		local.pirateKey = system.getenv('PIRATE_KEY');
-		local.test3 = server.system.environment.BOXLANG_LAMBDA_CLASS;
-		local.test4 = system.getenv('ray1');
+		writedump(server.system.environment);
+//		local.test3 = server.system.environment.BOXLANG_LAMBDA_CLASS;
+//		local.test4 = server.system.environment.ray1;
+		*/
+		local.pirateKey = server.system.environment?.PIRATE_KEY;
 
 		response.body = {
 			"error": false,
 			"messages": [],
-			"data": "test: #test# test2 #test2# test3 #test3# test4 #test4# Feb13 A====> Incoming event " & event.toString()
+			"data": "pk #pirateKey# Feb13 A====> Incoming event " & event.toString()
 		}
 		response.statusCode = 200
 	}
