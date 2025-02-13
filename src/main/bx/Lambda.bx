@@ -18,7 +18,7 @@ class{
 
 	struct function getWeather(key,lat,long) {
 
-		local.apiURL = "https://api.pirateweather.net/forecast/#arguments.key#/#arguments.lat#,#arguments.lng#";
+		local.apiURL = "https://api.pirateweather.net/forecast/#arguments.key#/#arguments.lat#,#arguments.long#";
 		bx:http url=local.apiURL result="local.result";
 		return jsonDeserialize(local.result.filecontent);
 	}
